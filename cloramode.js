@@ -1,8 +1,9 @@
 console.log('Loading Clora Mode Utils');
 
 _cloramode = {};
-_cloramode.setTitle = function(queryName, filterName, domTarget, modeDatasets) {
+_cloramode.setTitle = function({queryName, filterName, domTarget, modeDatasets}) {
   console.log('CMU: Configuring title setter.');
+  console.log(queryName, filterName, domTarget, modeDatasets);
   setTimeout(function() {
     var d = modeDatasets.filter(function(d) {
       return d.queryName == queryName;
