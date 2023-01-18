@@ -2,20 +2,21 @@ console.log('Loading Clora Mode Utils');
 
 _cloramode = {};
 
-_cloramode.setTextFromFirstResult = function({
-    queryName,
-    columnName, 
-    domTarget, 
-    modeDatasets,
-    resultFormatter = ((x) => x)
-  }) {
-      console.log('CMU: Configuring text setter.');
-      // console.log(queryName, columnName, domTarget, modeDatasets);
-      setTimeout(function() {
-        var d = modeDatasets.filter(function(d) {
-          return d.queryName == queryName;
-        });
-        var text = d[0].content[0][columnName];
-        $(domTarget).text(resultFormatter(text));
-      }, 500);
-    };
+_cloramode.setTextFromResult = function ({
+  queryName,
+  columnName,
+  domTarget,
+  modeDatasets,
+  resultFormatter = ((x, d) => x)
+}) {
+  console.log('CMU: Configuring first result text setter.');
+  // console.log(queryName, columnName, domTarget, modeDatasets);
+  setTimeout(function () {
+    var d = modeDatasets.filter(function (d) {
+      return d.queryName == queryName;
+    });
+
+    var text = d[0].content[0][columnName];
+    $(domTarget).text(resultFormatter(text, d));
+  }, 500);
+};
