@@ -1,16 +1,16 @@
 console.log('Loading Clora Mode Utils');
 
 _cloramode = {};
-_cloramode.setTitle = function({queryName, filterName, domTarget, modeDatasets}) {
-  console.log('CMU: Configuring title setter.');
-  console.log(queryName, filterName, domTarget, modeDatasets);
+
+_cloramode.setTextFromFirstResult = function({queryName, columnName, domTarget, modeDatasets}) {
+  console.log('CMU: Configuring text setter.');
+  // console.log(queryName, columnName, domTarget, modeDatasets);
   setTimeout(function() {
     var d = modeDatasets.filter(function(d) {
       return d.queryName == queryName;
     });
-    var numConsultants = d[0].count;
-    var consultantName =d[0].content[0][filterName];
+    var text =d[0].content[0][columnName];
     
-    $(domTarget).text(consultantName);
+    $(domTarget).text(text);
   }, 500);
 };
