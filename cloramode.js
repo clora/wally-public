@@ -7,7 +7,7 @@ _cloramode.setTextFromFirstResult = function({
     columnName, 
     domTarget, 
     modeDatasets,
-    resultFormatter: x => x
+    resultFormatter = (x) => x
   }) {
       console.log('CMU: Configuring text setter.');
       // console.log(queryName, columnName, domTarget, modeDatasets);
