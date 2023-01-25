@@ -18,8 +18,12 @@ _cloramode.setTextFromResult = function ({
     
     console.log("CMU Selected: ", d);
 
-    var text = "Error: No results in dataset";
-    if (d[0].count > 0) text = d[0].content[0][columnName];
+    if (d[0].count == 0) 
+    {
+      console.error('CMU: No Matching Records Found', d, d[0], columnName);
+    }
+    var text = "";
+    text = d[0].content[0][columnName];
     
     $(domTarget).text(resultFormatter(text, d));
   }, 500);
