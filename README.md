@@ -19,6 +19,14 @@ to dynamically update the report title.
   <h1>{{ title }} for <span id="clora_consultant_name"></span></h1>
   ```
 4. Add the following to the **bottom** of the file, updating the parameters as appropriate.
+  
+  * _queryName_ - The name of the query in the left navigation bar of Mode
+  * _columnName_ - The name of the column that the filter is operting on
+  * _domTarget_ - The `id` of the `span` tag you added to the document that you would like to update. 
+    Requires the prefixed `#` which indicates it is an `id` attribute.
+  * _resultFormatter_ - Optional argument which takes a lambda for advanced usecases. You _probably_ 
+    don't need it.
+
   ```
 <script>
   _cloramode.setTextFromResult({
@@ -33,3 +41,4 @@ to dynamically update the report title.
     }
   });
 </script>
+```
