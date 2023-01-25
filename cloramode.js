@@ -15,10 +15,7 @@ _cloramode.setTextFromResult = function ({
     var d = modeDatasets.filter(function (d) {
       return d.queryName == queryName;
     });
-    if (d == null) {
-      console.error("No query found named: ", queryName);
-    }
-
+    console.log("CMU Selected: ", d);
     var text = d[0].content[0][columnName];
     $(domTarget).text(resultFormatter(text, d));
   }, 500);
