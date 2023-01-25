@@ -15,7 +15,9 @@ to dynamically update the report title.
   ```
 3. Add the span tag for the text you want to update. For example, if you wanted to update the title:
   Add `<span id="clora_account_name">` to the title tag, like so:
-  `<h1>{{ title }} for <span id="clora_consultant_name"></span> <span id="clora_consultant_registered_at"></span></h1>`
+  ```
+  <h1>{{ title }} for <span id="clora_consultant_name"></span> <span id="clora_consultant_registered_at"></span></h1>
+  ```
 4. Add the following to the **bottom** of the file, updating the parameters as appropriate.
   ```
 <script>
